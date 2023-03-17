@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Palindrome : MonoBehaviour
 {
-    int number = 232;
+    int number = 4356;
     
     void Start()
     {
-        CheckPalindrome();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
+        //CheckPalindrome();
+        FlipFirstandLastDigitOFNumber();
     }
 
     void CheckPalindrome()
@@ -41,5 +35,34 @@ public class Palindrome : MonoBehaviour
         {
             Debug.Log("Number is not palindrome" + reverse);
         }
+    }
+
+    void FlipFirstandLastDigitOFNumber()
+    {
+        int lastDigit = 0;
+        int reminderOfDigit = 0;
+        int firstDigit = 0;
+
+        while(number > 10)
+        {
+            if(number != 0)
+            {
+                reminderOfDigit = number % 10;
+                lastDigit = lastDigit * 10 + reminderOfDigit;
+                number /= 10;
+            }
+           
+        }
+     
+
+        Debug.Log(lastDigit);
+
+        firstDigit = number;
+        number = lastDigit;
+        lastDigit = firstDigit;
+
+        Debug.Log(firstDigit);
+
+
     }
 }
