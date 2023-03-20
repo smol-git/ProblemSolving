@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Palindrome : MonoBehaviour
 {
-    int number = 4356;
+    public int number;
     
     void Start()
     {
-        //CheckPalindrome();
-        FlipFirstandLastDigitOFNumber();
+        CheckPalindrome();
+        //FlipFirstandLastDigitOFNumber();
     }
 
     void CheckPalindrome()
@@ -39,6 +39,6 @@ public class Palindrome : MonoBehaviour
 
     void FlipFirstandLastDigitOFNumber()
     {
-
+        
     }
 }
