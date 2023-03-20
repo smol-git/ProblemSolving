@@ -39,30 +39,6 @@ public class Palindrome : MonoBehaviour
 
     void FlipFirstandLastDigitOFNumber()
     {
-        int lastDigit = 0;
-        int reminderOfDigit = 0;
-        int firstDigit = 0;
-
-        while(number > 10)
-        {
-            if(number != 0)
-            {
-                reminderOfDigit = number % 10;
-                lastDigit = lastDigit * 10 + reminderOfDigit;
-                number /= 10;
-            }
-           
-        }
-     
-
-        Debug.Log(lastDigit);
-
-        firstDigit = number;
-        number = lastDigit;
-        lastDigit = firstDigit;
-
-        Debug.Log(firstDigit);
-
 
     }
 }
