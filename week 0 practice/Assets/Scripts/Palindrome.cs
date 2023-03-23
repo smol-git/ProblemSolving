@@ -36,9 +36,4 @@ public class Palindrome : MonoBehaviour
             Debug.Log("Number is not palindrome" + reverse);
         }
     }
-
-    void FlipFirstandLastDigitOFNumber()
-    {
-        
-    }
 }
