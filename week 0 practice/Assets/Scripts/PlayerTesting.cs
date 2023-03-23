@@ -40,9 +40,7 @@ public class PlayerTesting : MonoBehaviour
                  }
                 collision.isGround = false;
 
-        }
+            }
            
-     
-
     }
 }
