@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public float playerOffset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector2.up * 10 * Time.deltaTime);
+           transform.Translate(Vector2.up * 10 * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -34,5 +35,25 @@ public class PlayerControls : MonoBehaviour
         }
     }
     
+    void PlayerTwoControls()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+           transform.Translate(Vector2.up * 10 * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(Vector2.down * 10 * Time.deltaTime);
+        }
 
+        if (transform.position.y >= playerOffset)
+        {
+            transform.position = new Vector2(transform.position.x, playerOffset);
+        }
+
+        if (transform.position.y <= -playerOffset)
+        {
+            transform.position = new Vector2(transform.position.x, -playerOffset);
+        }
+    }
 }
