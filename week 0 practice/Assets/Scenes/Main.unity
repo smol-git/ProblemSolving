@@ -310,8 +310,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1768796823}
-  - component: {fileID: 1768796824}
   - component: {fileID: 1768796825}
+  - component: {fileID: 1768796824}
   m_Layer: 0
   m_Name: CheckGround
   m_TagString: Untagged
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1864144256}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
