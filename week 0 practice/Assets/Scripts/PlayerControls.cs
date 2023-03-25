@@ -34,26 +34,4 @@ public class PlayerControls : MonoBehaviour
             transform.position = new Vector2(transform.position.x, -playerOffset);
         }
     }
-    
-    void PlayerTwoControls()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-           transform.Translate(Vector2.up * 10 * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(Vector2.down * 10 * Time.deltaTime);
-        }
-
-        if (transform.position.y >= playerOffset)
-        {
-            transform.position = new Vector2(transform.position.x, playerOffset);
-        }
-
-        if (transform.position.y <= -playerOffset)
-        {
-            transform.position = new Vector2(transform.position.x, -playerOffset);
-        }
-    }
 }
