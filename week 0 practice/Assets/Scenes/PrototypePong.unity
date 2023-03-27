@@ -1025,6 +1025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ball: {fileID: 1842643895}
   myRigidbody2D: {fileID: 2069671528}
+  lerpSpeed: 10
+  offset: 0
   speed: 30
 --- !u!1 &2082383558
 GameObject:

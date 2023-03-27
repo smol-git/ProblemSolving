@@ -19,11 +19,9 @@ public class ComputerPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         TestingAIPaddleWithLerp();
-        
-
 
     }
 
@@ -46,17 +44,17 @@ public class ComputerPlayer : MonoBehaviour
             if (myRigidbody2D.velocity.y < 0)
             {
                 myRigidbody2D.velocity = Vector2.zero;
-                myRigidbody2D.velocity = Vector2.Lerp(myRigidbody2D.velocity, Vector2.up * speed, lerpSpeed * Time.deltaTime);
             }
-               
+            myRigidbody2D.velocity = Vector2.Lerp(myRigidbody2D.velocity, Vector2.up * speed, lerpSpeed * Time.deltaTime);
+
         }
         else if (Ball.transform.position.y < transform.position.y)
         {
             if (myRigidbody2D.velocity.y > 0)
             {
-                myRigidbody2D.velocity = Vector2.zero;
-                myRigidbody2D.velocity = Vector2.Lerp(myRigidbody2D.velocity, Vector2.down * speed, lerpSpeed * Time.deltaTime);
+                myRigidbody2D.velocity = Vector2.zero;               
             }
+            myRigidbody2D.velocity = Vector2.Lerp(myRigidbody2D.velocity, Vector2.down * speed, lerpSpeed * Time.deltaTime);
         }
         else
         {
