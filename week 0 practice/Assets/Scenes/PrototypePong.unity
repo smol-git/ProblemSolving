@@ -856,13 +856,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842643895}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee53a5560034e442b5e9dd44bad7130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody2D: {fileID: 1842643896}
-  speed: 500
+  speed: 250
 --- !u!1 &2069671524
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &2069671529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1023,8 +1023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9101c18bfdfd6294c88d4968901958e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 3
-  speed: 10
+  Ball: {fileID: 1842643895}
+  myRigidbody2D: {fileID: 2069671528}
+  speed: 30
 --- !u!1 &2082383558
 GameObject:
   m_ObjectHideFlags: 0
