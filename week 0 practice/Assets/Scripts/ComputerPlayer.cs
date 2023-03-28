@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComputerPlayer : MonoBehaviour
 {
     Transform CurrentTransform;
-    public GameObject Ball;
+    public Rigidbody2D Ball;
     public Rigidbody2D myRigidbody2D;
     public float lerpSpeed = 10f;
     public float offset;
@@ -21,7 +21,7 @@ public class ComputerPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        TestingAIPaddleWithLerp();
+        TestingAIPaddleWithoutLerp();
 
     }
 
@@ -66,20 +66,29 @@ public class ComputerPlayer : MonoBehaviour
     {
         CurrentTransform = this.transform;
 
-        if (Ball.transform.position.x > 0 && Ball.transform.position.y > 0)
+        if (Ball.velocity.x > 0.0f)
         {
             if (CurrentTransform.position.y < Ball.transform.position.y)
             {
-                myRigidbody2D.velocity = new Vector2(0, 1) * speed;
+                myRigidbody2D.AddForce(Vector2.up * speed);
             }
             else if (CurrentTransform.position.y > Ball.transform.position.y)
             {
-                myRigidbody2D.velocity = new Vector2(0, -1) * speed;
+                myRigidbody2D.AddForce(Vector2.down * speed);
             }
-            else
-            {
-                myRigidbody2D.velocity = new Vector2(0, 0) * speed;
+        else
+        {
+                if (CurrentTransform.position.y > 0.0f)
+                {
+                    myRigidbody2D.AddForce(Vector2.down * speed);
+                }
+                else if (CurrentTransform.position.y < 0.0f)
+                {
+                    myRigidbody2D.AddForce(Vector2.up * speed);
+                }
+
             }
+
         }
     }
 }
