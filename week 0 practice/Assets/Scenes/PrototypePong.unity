@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerOffset: 3.8
+  speed: 10
 --- !u!61 &25318755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -862,7 +863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody2D: {fileID: 1842643896}
-  speed: 250
+  PlayerOne: {fileID: 25318751}
+  speed: 300
 --- !u!1 &2069671524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +1029,7 @@ MonoBehaviour:
   myRigidbody2D: {fileID: 2069671528}
   lerpSpeed: 10
   offset: 0
-  speed: 5
+  speed: 20
 --- !u!1 &2082383558
 GameObject:
   m_ObjectHideFlags: 0

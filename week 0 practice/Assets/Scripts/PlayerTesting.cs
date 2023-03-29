@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerTesting : MonoBehaviour
 {
     public Rigidbody2D myRigidbody2D;
+    public GameObject PlayerOne;
     public float speed;
+    private float x;
+    private float y;
    
     //public CheckCollision collision;
 
@@ -16,42 +19,56 @@ public class PlayerTesting : MonoBehaviour
          myRigidbody2D.GetComponent<Rigidbody2D>();
         BallMovement();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+      
     }
 
     void BallMovement()
     {
-        float x = Random.value < 0.5f ? -1.0f : 1.0f;
-        float y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
+         x = Random.value < 0.5f ? -1.0f : 1.0f;
+         y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
         myRigidbody2D.AddForce(new Vector2(x, y) * speed);
+
+    
     }
-   /* void PlayerMovement()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.D))
+        if(collision.gameObject == PlayerOne)
         {
-            // myRigidbody2D.velocity = Vector2.right * Time.deltaTime * 10;
-            transform.Translate(Vector2.right * Time.deltaTime * 10);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            //myRigidbody2D.velocity = Vector2.up * 10;
-            transform.Translate(-Vector2.right * Time.deltaTime * 10);
+            
+            speed += 50f;
+            myRigidbody2D.AddForce(new Vector2(x, y) * speed);
+            Debug.Log("ball collide with player one paddle" + " "+  speed);
+            
         }
 
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (collision.isGround == true)
-            {
-                myRigidbody2D.velocity = Vector2.up * jump;
+    }
+    /* void PlayerMovement()
+     {
+         if (Input.GetKey(KeyCode.D))
+         {
+             // myRigidbody2D.velocity = Vector2.right * Time.deltaTime * 10;
+             transform.Translate(Vector2.right * Time.deltaTime * 10);
+         }
+         if (Input.GetKey(KeyCode.A))
+         {
+             //myRigidbody2D.velocity = Vector2.up * 10;
+             transform.Translate(-Vector2.right * Time.deltaTime * 10);
+         }
 
-            }
-            collision.isGround = false;
 
-        }
-    }*/
+         if (Input.GetKey(KeyCode.Space))
+         {
+             if (collision.isGround == true)
+             {
+                 myRigidbody2D.velocity = Vector2.up * jump;
+
+             }
+             collision.isGround = false;
+
+         }
+     }*/
 }

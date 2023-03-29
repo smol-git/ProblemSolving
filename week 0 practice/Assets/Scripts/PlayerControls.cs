@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public float playerOffset;
-
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,11 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-           transform.Translate(Vector2.up * 10 * Time.deltaTime);
+           transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector2.down * 10 * Time.deltaTime);
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
         }
         
         if(transform.position.y >= playerOffset)
