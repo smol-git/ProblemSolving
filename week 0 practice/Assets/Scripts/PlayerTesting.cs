@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerTesting : MonoBehaviour
 {
     public Rigidbody2D myRigidbody2D;
-    public GameObject PlayerOne;
+    public GameObject aiController;
     public float speed;
     private float x;
     private float y;
@@ -15,14 +15,21 @@ public class PlayerTesting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // collision.GetComponent<CheckCollision>();
-         myRigidbody2D.GetComponent<Rigidbody2D>();
+        // collision.GetComponent<CheckCollision>();
+        
+        myRigidbody2D.GetComponent<Rigidbody2D>();
         BallMovement();
+
     }
-    private void Update()
+  /*  private void LateUpdate()
     {
-      
-    }
+        if(aiController.GetComponent<ComputerPlayer>().speed == 10f)
+        {
+            this.speed += 50f;
+            myRigidbody2D.AddForce(new Vector2(x, y) * this.speed);
+        }
+        
+    }*/
 
     void BallMovement()
     {
@@ -30,22 +37,23 @@ public class PlayerTesting : MonoBehaviour
          y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
         myRigidbody2D.AddForce(new Vector2(x, y) * speed);
 
-    
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject == PlayerOne)
-        {
-            
-            speed += 50f;
-            myRigidbody2D.AddForce(new Vector2(x, y) * speed);
-            Debug.Log("ball collide with player one paddle" + " "+  speed);
-            
-        }
-
-
+      
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject == aiController)
+        {
+            aiController.GetComponent<ComputerPlayer>().speed = 10f;
+        }
+    }
+
+
+
     /* void PlayerMovement()
      {
          if (Input.GetKey(KeyCode.D))

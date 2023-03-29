@@ -863,8 +863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody2D: {fileID: 1842643896}
-  PlayerOne: {fileID: 25318751}
-  speed: 300
+  aiController: {fileID: 2069671530}
+  speed: 250
 --- !u!1 &2069671524
 GameObject:
   m_ObjectHideFlags: 0
